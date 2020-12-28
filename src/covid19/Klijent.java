@@ -57,8 +57,12 @@ public class Klijent implements Runnable {
 			try {
 				poruka = unosSaTastature.readLine();
 				
-			
-				serverOutput.println(unosZaMeni(poruka));
+				if(input.equals("Vas izbor:")) {
+					serverOutput.println(unosZaMeni(poruka));
+				}else {
+					serverOutput.println(poruka);
+				}
+				
 				
 					
 				
@@ -67,10 +71,7 @@ public class Klijent implements Runnable {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			} /*catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}*/
+			} 
 		}
 		
 	}
