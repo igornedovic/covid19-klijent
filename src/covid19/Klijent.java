@@ -33,7 +33,7 @@ public class Klijent implements Runnable {
 				System.out.println(input);
 
 				// proveravamo da li je poruka od servera
-				if (input.equals("Uspesno ste se registrovali. Sada se mozete prijaviti na sistem.")) {
+				if (input.equals("Dovidjenja")) {
 					break;
 				}
 			}
@@ -52,8 +52,7 @@ public class Klijent implements Runnable {
 
 	@Override
 	public void run() {
-
-			
+	
 		String poruka;
 
 		while (true) {
@@ -63,7 +62,7 @@ public class Klijent implements Runnable {
 				
 				serverOutput.println(poruka);
 
-				if (poruka.equals("Cao")) {
+				if (poruka.equals("3")) {
 					break;
 				}
 			} catch (IOException e) {
