@@ -26,17 +26,19 @@ public class Klijent implements Runnable {
 			
 			new Thread(new Klijent()).start();
 			
-			
-			
-			while(true) {
-				input = serverInput.readLine();
-				System.out.println(input);
+			while (true) {
 				
-				// proveravamo da li poruka od servera pocinje sa dovidjenja
-				if(input.startsWith("Dovidjenja")) {
+				input = serverInput.readLine();
+				
+				System.out.println(input);
+
+				// proveravamo da li je poruka od servera
+				if (input.equals("Uspesno ste se registrovali. Sada se mozete prijaviti na sistem.")) {
 					break;
 				}
 			}
+				
+			
 			
 			soketZaKomunikaciju.close();
 			
@@ -51,54 +53,29 @@ public class Klijent implements Runnable {
 	@Override
 	public void run() {
 
+			
 		String poruka;
-		
-		while(true) {
+
+		while (true) {
+
 			try {
 				poruka = unosSaTastature.readLine();
 				
-				if(input.equals("Vas izbor:")) {
-					serverOutput.println(unosZaMeni(poruka));
-				}else {
-					serverOutput.println(poruka);
+				serverOutput.println(poruka);
+
+				if (poruka.equals("Cao")) {
+					break;
 				}
-				
-				
-					
-				
-			
-				
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			} 
-		}
-		
-	}
-	
-	public String unosZaMeni(String poruka) {
-	
-		try {
-			switch (Integer.parseInt(poruka)) {
-			case 1:
-				return "1";
-			case 2:
-				return "2";
-			case 3:
-				return "3";
-			default:
-				break;
 			}
-		} catch (NumberFormatException e) {
-			System.out.println("Nepostojeca opcija, pokusajte ponovo.");
-			System.out.println();
-			System.out.println();
-			return "GRESKA: POGRESNA OPCIJA";
+			
 		}
-
-		return "GRESKA: POGRESNA OPCIJA";
-	}
 		
+		
+	}
+	
 }
 
 
