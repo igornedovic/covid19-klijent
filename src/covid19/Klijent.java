@@ -46,7 +46,7 @@ public class Klijent implements Runnable {
 		} catch (UnknownHostException e) {
 			System.out.println("NEPOZNAT HOST!");
 		} catch (IOException e) {
-			System.out.println("SERVER JE PAO!");
+			System.out.println("SERVER JE PAO! UKOLIKO SE NISTE DO KRAJA REGISTROVALI ILI TESTIRALI, MORACETE TO PONOVO DA UCINITE KADA BUDEMO AKTIVNI.");
 		}
 	}
 
