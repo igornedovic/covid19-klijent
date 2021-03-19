@@ -66,8 +66,7 @@ public class Klijent implements Runnable {
 					break;
 				}
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				System.out.println("GRESKA PRI UNOSU!");
 			}
 			
 		}
